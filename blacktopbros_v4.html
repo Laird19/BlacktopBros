@@ -1,0 +1,762 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Black Top Bros | Driveway Sealcoating — York & Ogunquit, Maine</title>
+<meta name="description" content="Professional driveway sealcoating in York & Ogunquit, Maine. Local, licensed, and affordable. Call or text for a free quote.">
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700;900&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --black: #111111;
+    --yellow: #FFD400;
+    --yellow-dark: #E6BF00;
+    --white: #FFFFFF;
+    --gray-light: #F7F7F5;
+    --gray-mid: #E8E8E5;
+    --gray-text: #555550;
+    --font-display: 'Barlow Condensed', sans-serif;
+    --font-body: 'Barlow', sans-serif;
+  }
+  html { scroll-behavior: smooth; }
+  body { font-family: var(--font-body); background: var(--white); color: var(--black); overflow-x: hidden; font-size: 17px; }
+
+  /* NAV */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    background: var(--black);
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 0 40px; height: 68px;
+    border-bottom: 3px solid var(--yellow);
+  }
+  .nav-logo { display: flex; align-items: center; gap: 14px; text-decoration: none; }
+  .logo-lockup { display: flex; flex-direction: column; line-height: 1; }
+  .logo-top {
+    font-family: var(--font-display); font-weight: 900; font-size: 20px;
+    color: var(--white); letter-spacing: 0.06em; text-transform: uppercase;
+  }
+  .logo-bottom {
+    font-family: var(--font-display); font-weight: 700; font-size: 11px;
+    color: var(--yellow); letter-spacing: 0.2em; text-transform: uppercase;
+    margin-top: 1px;
+  }
+  .nav-links { display: flex; align-items: center; gap: 32px; list-style: none; }
+  .nav-links a {
+    font-family: var(--font-body); font-weight: 600; font-size: 14px;
+    letter-spacing: 0.08em; text-transform: uppercase;
+    color: rgba(255,255,255,0.75); text-decoration: none; transition: color 0.2s;
+  }
+  .nav-links a:hover { color: var(--yellow); }
+
+  /* BOOKING FORM */
+  .booking-section { background: var(--gray-light); }
+  .booking-wrap {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: start;
+  }
+  .booking-left {}
+  .booking-left .section-body { margin-bottom: 32px; }
+  .booking-perks { display: flex; flex-direction: column; gap: 16px; }
+  .booking-perk { display: flex; align-items: flex-start; gap: 14px; }
+  .perk-icon {
+    width: 40px; height: 40px; border-radius: 8px;
+    background: var(--yellow); display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+  }
+  .perk-icon svg { width: 20px; height: 20px; }
+  .perk-text h4 { font-family: var(--font-display); font-weight: 700; font-size: 16px; text-transform: uppercase; letter-spacing: 0.03em; color: var(--black); margin-bottom: 3px; }
+  .perk-text p { font-size: 14px; color: var(--gray-text); line-height: 1.5; }
+  .booking-form-card {
+    background: var(--white); border: 1px solid var(--gray-mid);
+    border-radius: 12px; padding: 40px;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.06);
+  }
+  .booking-form-title {
+    font-family: var(--font-display); font-weight: 900; font-size: 26px;
+    text-transform: uppercase; letter-spacing: 0.01em; color: var(--black);
+    margin-bottom: 6px;
+  }
+  .booking-form-sub { font-size: 14px; color: var(--gray-text); margin-bottom: 28px; }
+  .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+  .form-group { display: flex; flex-direction: column; gap: 6px; margin-bottom: 14px; }
+  .form-group label {
+    font-size: 12px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase;
+    color: var(--black);
+  }
+  .form-group input,
+  .form-group select,
+  .form-group textarea {
+    font-family: var(--font-body); font-size: 15px; color: var(--black);
+    background: var(--gray-light); border: 1.5px solid var(--gray-mid);
+    border-radius: 6px; padding: 12px 14px;
+    transition: border-color 0.2s, background 0.2s;
+    outline: none; width: 100%;
+  }
+  .form-group input:focus,
+  .form-group select:focus,
+  .form-group textarea:focus {
+    border-color: var(--yellow); background: #fffef5;
+  }
+  .form-group textarea { resize: vertical; min-height: 88px; }
+  .form-group select { appearance: none; cursor: pointer; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 24 24' fill='none' stroke='%23555' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 14px center; padding-right: 40px; }
+  .form-submit {
+    width: 100%; padding: 16px; border-radius: 6px;
+    background: var(--yellow); color: var(--black);
+    font-family: var(--font-body); font-weight: 700; font-size: 16px;
+    border: none; cursor: pointer; letter-spacing: 0.03em;
+    transition: background 0.2s, transform 0.15s;
+    display: flex; align-items: center; justify-content: center; gap: 10px;
+  }
+  .form-submit:hover { background: var(--yellow-dark); transform: translateY(-1px); }
+  .form-submit:disabled { opacity: 0.6; cursor: not-allowed; transform: none; }
+  .form-note { font-size: 12px; color: var(--gray-text); text-align: center; margin-top: 12px; }
+
+  /* SUCCESS STATE */
+  .booking-success {
+    display: none; text-align: center; padding: 20px 0;
+  }
+  .success-icon {
+    width: 64px; height: 64px; background: rgba(255,212,0,0.12);
+    border: 2px solid var(--yellow); border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    margin: 0 auto 20px;
+  }
+  .success-icon svg { width: 30px; height: 30px; }
+  .booking-success h3 { font-family: var(--font-display); font-weight: 900; font-size: 28px; text-transform: uppercase; color: var(--black); margin-bottom: 10px; }
+  .booking-success p { font-size: 15px; color: var(--gray-text); line-height: 1.6; }
+
+  @media (max-width: 860px) {
+    .booking-wrap { grid-template-columns: 1fr; gap: 40px; }
+    .form-row { grid-template-columns: 1fr; }
+  }
+  .nav-cta {
+    background: var(--yellow); color: var(--black) !important;
+    padding: 10px 22px; border-radius: 4px; font-weight: 700 !important;
+  }
+  .nav-cta:hover { background: var(--yellow-dark) !important; }
+
+  /* HERO */
+  .hero {
+    min-height: 100vh; background: var(--black);
+    display: flex; align-items: center;
+    position: relative; overflow: hidden; padding-top: 68px;
+  }
+  .hero-inner {
+    position: relative; z-index: 2; max-width: 1100px;
+    margin: 0 auto; padding: 80px 40px;
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 60px; align-items: center; width: 100%;
+  }
+  .hero-badge {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: rgba(255,212,0,0.12); border: 1px solid rgba(255,212,0,0.3);
+    border-radius: 100px; padding: 6px 16px; margin-bottom: 24px;
+  }
+  .hero-badge-dot {
+    width: 8px; height: 8px; background: var(--yellow);
+    border-radius: 50%; animation: pulse 2s infinite;
+  }
+  @keyframes pulse { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:.6;transform:scale(.85)} }
+  .hero-badge span { font-size: 13px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: var(--yellow); }
+  .hero h1 {
+    font-family: var(--font-display); font-weight: 900;
+    font-size: clamp(52px, 7vw, 88px); line-height: 0.92;
+    color: var(--white); letter-spacing: -0.01em; text-transform: uppercase; margin-bottom: 24px;
+  }
+  .hero h1 em { font-style: normal; color: var(--yellow); display: block; }
+  .hero-sub { font-size: 18px; line-height: 1.6; color: rgba(255,255,255,0.65); margin-bottom: 40px; max-width: 460px; }
+  .hero-actions { display: flex; gap: 16px; flex-wrap: wrap; }
+  .btn-primary {
+    display: inline-flex; align-items: center; gap: 10px;
+    background: var(--yellow); color: var(--black);
+    font-family: var(--font-body); font-weight: 700; font-size: 16px;
+    padding: 16px 32px; border-radius: 4px; text-decoration: none;
+    transition: background 0.2s, transform 0.15s; letter-spacing: 0.02em;
+  }
+  .btn-primary:hover { background: var(--yellow-dark); transform: translateY(-1px); }
+  .btn-secondary {
+    display: inline-flex; align-items: center; gap: 10px;
+    background: transparent; color: var(--white);
+    font-family: var(--font-body); font-weight: 600; font-size: 16px;
+    padding: 16px 28px; border-radius: 4px;
+    border: 1.5px solid rgba(255,255,255,0.25); text-decoration: none;
+    transition: border-color 0.2s, color 0.2s;
+  }
+  .btn-secondary:hover { border-color: var(--yellow); color: var(--yellow); }
+  .hero-card {
+    background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 12px; padding: 36px; backdrop-filter: blur(4px);
+  }
+  .hero-card-title { font-family: var(--font-display); font-weight: 700; font-size: 13px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--yellow); margin-bottom: 24px; }
+  .hero-stats { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 28px; }
+  .hero-stat { background: rgba(255,255,255,0.05); border-radius: 8px; padding: 20px; border: 1px solid rgba(255,255,255,0.08); }
+  .hero-stat-num { font-family: var(--font-display); font-weight: 900; font-size: 36px; color: var(--yellow); line-height: 1; margin-bottom: 6px; }
+  .hero-stat-label { font-size: 13px; color: rgba(255,255,255,0.55); font-weight: 500; line-height: 1.3; }
+  .hero-checklist { list-style: none; display: flex; flex-direction: column; gap: 12px; }
+  .hero-checklist li { display: flex; align-items: center; gap: 12px; font-size: 15px; color: rgba(255,255,255,0.8); font-weight: 500; }
+  .check-icon { width: 22px; height: 22px; background: rgba(255,212,0,0.15); border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+  .check-icon svg { width: 12px; height: 12px; }
+
+  /* TRUST BAR */
+  .trust-bar {
+    background: var(--yellow); padding: 18px 40px;
+    display: flex; justify-content: center; gap: 56px; flex-wrap: wrap;
+  }
+  .trust-item { display: flex; align-items: center; gap: 10px; font-family: var(--font-body); font-weight: 700; font-size: 14px; letter-spacing: 0.05em; text-transform: uppercase; color: var(--black); }
+  .trust-item svg { width: 20px; height: 20px; flex-shrink: 0; }
+
+  /* SECTIONS */
+  section { padding: 96px 40px; }
+  .section-inner { max-width: 1100px; margin: 0 auto; }
+  .section-label {
+    font-family: var(--font-body); font-weight: 700; font-size: 12px;
+    letter-spacing: 0.14em; text-transform: uppercase; color: var(--yellow);
+    background: rgba(255,212,0,0.1); border: 1px solid rgba(255,212,0,0.25);
+    display: inline-block; padding: 5px 14px; border-radius: 100px; margin-bottom: 16px;
+  }
+  .section-label.dark { color: var(--black); background: rgba(0,0,0,0.1); border-color: rgba(0,0,0,0.2); }
+  .section-title {
+    font-family: var(--font-display); font-weight: 900;
+    font-size: clamp(36px, 5vw, 56px); line-height: 0.95;
+    text-transform: uppercase; letter-spacing: -0.01em; margin-bottom: 16px;
+  }
+  .section-title em { font-style: normal; color: var(--yellow); }
+  .section-body { font-size: 17px; line-height: 1.65; color: var(--gray-text); max-width: 560px; margin-bottom: 56px; }
+
+  /* HOW IT WORKS */
+  .how-it-works { background: var(--black); }
+  .how-it-works .section-title { color: var(--white); }
+  .how-it-works .section-body { color: rgba(255,255,255,0.55); }
+  .steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; }
+  .step { background: rgba(255,255,255,0.04); padding: 40px 36px; position: relative; transition: background 0.2s; }
+  .step:hover { background: rgba(255,255,255,0.07); }
+  .step-num { font-family: var(--font-display); font-weight: 900; font-size: 72px; line-height: 1; color: var(--yellow); opacity: 0.25; position: absolute; top: 24px; right: 28px; }
+  .step-icon { width: 52px; height: 52px; background: rgba(255,212,0,0.1); border-radius: 8px; display: flex; align-items: center; justify-content: center; margin-bottom: 24px; border: 1px solid rgba(255,212,0,0.2); }
+  .step-icon svg { width: 26px; height: 26px; }
+  .step h3 { font-family: var(--font-display); font-weight: 700; font-size: 22px; text-transform: uppercase; color: var(--white); margin-bottom: 12px; letter-spacing: 0.02em; }
+  .step p { font-size: 15px; line-height: 1.6; color: rgba(255,255,255,0.5); }
+
+  /* SERVICES */
+  .services { background: var(--gray-light); }
+  .service-card { background: var(--white); border-radius: 10px; overflow: hidden; border: 1px solid var(--gray-mid); }
+  .service-header { background: var(--black); padding: 32px 36px; position: relative; overflow: hidden; }
+  .service-header::after { content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 4px; background: var(--yellow); }
+  .service-header h2 { font-family: var(--font-display); font-weight: 900; font-size: 42px; text-transform: uppercase; color: var(--white); line-height: 1; }
+  .service-header p { font-size: 15px; color: rgba(255,255,255,0.55); margin-top: 8px; }
+  .service-body { display: grid; grid-template-columns: 1fr 1fr; gap: 0; }
+  .service-feature { padding: 28px 32px; border-bottom: 1px solid var(--gray-mid); border-right: 1px solid var(--gray-mid); }
+  .service-feature:nth-child(even) { border-right: none; }
+  .service-feature:nth-last-child(-n+2) { border-bottom: none; }
+  .sf-icon { font-size: 28px; margin-bottom: 12px; display: block; }
+  .service-feature h4 { font-family: var(--font-display); font-weight: 700; font-size: 17px; text-transform: uppercase; color: var(--black); margin-bottom: 6px; letter-spacing: 0.02em; }
+  .service-feature p { font-size: 14px; line-height: 1.55; color: var(--gray-text); }
+  .service-footer { padding: 28px 36px; background: rgba(255,212,0,0.06); border-top: 1px solid var(--gray-mid); display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px; }
+  .price-note { font-family: var(--font-display); font-weight: 700; font-size: 24px; text-transform: uppercase; color: var(--black); }
+  .price-note span { font-family: var(--font-body); font-size: 14px; font-weight: 500; color: var(--gray-text); text-transform: none; display: block; margin-top: 2px; }
+
+  /* WHY US */
+  .why-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+  .why-card { padding: 36px; border: 1px solid var(--gray-mid); border-radius: 10px; background: var(--white); transition: border-color 0.2s, transform 0.2s; }
+  .why-card:hover { border-color: var(--yellow); transform: translateY(-3px); }
+  .why-num { font-family: var(--font-display); font-weight: 900; font-size: 13px; letter-spacing: 0.1em; color: var(--yellow); margin-bottom: 20px; }
+  .why-card h3 { font-family: var(--font-display); font-weight: 700; font-size: 22px; text-transform: uppercase; color: var(--black); margin-bottom: 12px; letter-spacing: 0.02em; }
+  .why-card p { font-size: 15px; line-height: 1.65; color: var(--gray-text); }
+
+  /* CREW */
+  .crew-section { background: var(--black); }
+  .crew-section .section-title { color: var(--white); }
+  .crew-section .section-body { color: rgba(255,255,255,0.5); }
+  .crew-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+  .crew-card {
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.09);
+    border-radius: 12px; overflow: hidden;
+    transition: border-color 0.25s, transform 0.25s;
+  }
+  .crew-card:hover { border-color: rgba(255,212,0,0.45); transform: translateY(-4px); }
+  .crew-avatar {
+    height: 120px;
+    background: var(--black);
+    display: flex; align-items: center; justify-content: center;
+    position: relative; overflow: hidden;
+    border-bottom: 3px solid var(--yellow);
+  }
+  .crew-initials {
+    font-family: var(--font-display); font-weight: 900; font-size: 52px;
+    color: var(--yellow); letter-spacing: -0.02em; line-height: 1;
+    opacity: 0.9;
+  }
+  .crew-stripe {
+    position: absolute; bottom: 0; left: 0; right: 0; height: 3px;
+    background: var(--yellow);
+  }
+  .crew-body { padding: 28px; }
+  .crew-name { font-family: var(--font-display); font-weight: 900; font-size: 28px; text-transform: uppercase; color: var(--white); letter-spacing: 0.02em; line-height: 1; margin-bottom: 6px; }
+  .crew-role { font-size: 13px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--yellow); margin-bottom: 16px; }
+  .crew-sports {
+    display: flex; gap: 8px; margin-bottom: 20px; flex-wrap: wrap;
+  }
+  .sport-tag {
+    display: inline-flex; align-items: center; gap: 6px;
+    font-size: 12px; font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase;
+    color: rgba(255,255,255,0.6);
+    background: rgba(255,255,255,0.07);
+    border: 1px solid rgba(255,255,255,0.12);
+    padding: 4px 12px; border-radius: 100px;
+  }
+  .crew-phone {
+    display: flex; align-items: center; gap: 8px;
+    font-size: 15px; font-weight: 600; color: rgba(255,255,255,0.45);
+    text-decoration: none; transition: color 0.2s;
+  }
+  .crew-phone:hover { color: var(--yellow); }
+  .crew-phone svg { width: 15px; height: 15px; flex-shrink: 0; }
+  .crew-no-phone { font-size: 14px; color: rgba(255,255,255,0.25); }
+
+  /* AREA */
+  .area-section { background: var(--gray-light); }
+  .area-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+  .area-card {
+    background: var(--white); border: 1px solid var(--gray-mid);
+    border-radius: 10px; padding: 32px; position: relative;
+    overflow: hidden; transition: border-color 0.2s;
+    border-top: 4px solid var(--yellow);
+  }
+  .area-card:hover { border-color: var(--yellow); }
+  .area-name { font-family: var(--font-display); font-weight: 900; font-size: 38px; text-transform: uppercase; color: var(--black); margin-bottom: 8px; line-height: 1; }
+  .area-sub { font-size: 14px; color: var(--gray-text); margin-bottom: 20px; }
+  .area-tags { display: flex; flex-wrap: wrap; gap: 8px; }
+  .area-tag { font-size: 12px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: var(--black); background: rgba(0,0,0,0.05); border: 1px solid rgba(0,0,0,0.1); padding: 4px 12px; border-radius: 100px; }
+
+  /* REVIEWS */
+  .reviews-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+  .review-card { background: var(--white); border: 1px solid var(--gray-mid); border-radius: 10px; padding: 28px; }
+  .stars { display: flex; gap: 3px; margin-bottom: 16px; }
+  .star { width: 16px; height: 16px; background: var(--yellow); clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%); }
+  .review-text { font-size: 15px; line-height: 1.65; color: var(--gray-text); margin-bottom: 20px; font-style: italic; }
+  .review-author { display: flex; align-items: center; gap: 12px; }
+  .author-avatar { width: 40px; height: 40px; border-radius: 50%; background: var(--black); display: flex; align-items: center; justify-content: center; font-family: var(--font-display); font-weight: 700; font-size: 15px; color: var(--yellow); flex-shrink: 0; }
+  .author-name { font-weight: 700; font-size: 14px; color: var(--black); }
+  .author-location { font-size: 13px; color: var(--gray-text); }
+
+  /* FAQ */
+  .faq-section { background: var(--gray-light); }
+  .faq-list { max-width: 760px; margin: 0 auto; display: flex; flex-direction: column; gap: 2px; }
+  .faq-item { background: var(--white); border: 1px solid var(--gray-mid); border-radius: 8px; overflow: hidden; }
+  .faq-q { padding: 22px 28px; font-family: var(--font-display); font-weight: 700; font-size: 18px; text-transform: uppercase; letter-spacing: 0.02em; color: var(--black); display: flex; justify-content: space-between; align-items: center; cursor: pointer; user-select: none; transition: background 0.15s; }
+  .faq-q:hover { background: var(--gray-light); }
+  .faq-q::after { content: '+'; font-size: 24px; font-weight: 400; color: var(--yellow); flex-shrink: 0; margin-left: 16px; line-height: 1; }
+  .faq-item input { display: none; }
+  .faq-item input:checked ~ .faq-q::after { content: '−'; }
+  .faq-a { display: none; padding: 0 28px 22px; font-size: 15px; line-height: 1.65; color: var(--gray-text); }
+  .faq-item input:checked ~ .faq-a { display: block; }
+
+  /* CTA */
+  .cta-section { background: var(--yellow); padding: 96px 40px; text-align: center; }
+  .cta-section h2 { font-family: var(--font-display); font-weight: 900; font-size: clamp(44px, 6vw, 72px); text-transform: uppercase; color: var(--black); line-height: 0.95; margin-bottom: 16px; }
+  .cta-section p { font-size: 18px; color: rgba(0,0,0,0.6); margin-bottom: 40px; font-weight: 500; }
+  .cta-phones { display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; }
+  .phone-btn { display: inline-flex; align-items: center; gap: 12px; background: var(--black); color: var(--white); text-decoration: none; font-family: var(--font-display); font-weight: 700; font-size: 22px; letter-spacing: 0.02em; padding: 18px 36px; border-radius: 6px; transition: transform 0.15s, opacity 0.2s; }
+  .phone-btn:hover { transform: translateY(-2px); opacity: 0.9; }
+  .phone-btn svg { width: 24px; height: 24px; }
+  .phone-label { font-size: 12px; font-family: var(--font-body); font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; opacity: 0.5; display: block; line-height: 1; margin-bottom: 2px; }
+
+  /* FOOTER */
+  footer { background: #0A0A0A; padding: 48px 40px 32px; border-top: 3px solid var(--yellow); }
+  .footer-inner { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 48px; padding-bottom: 40px; border-bottom: 1px solid rgba(255,255,255,0.1); margin-bottom: 32px; }
+  .footer-brand p { font-size: 14px; line-height: 1.65; color: rgba(255,255,255,0.4); margin-top: 16px; max-width: 320px; }
+  .footer-col h4 { font-family: var(--font-display); font-weight: 700; font-size: 13px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--yellow); margin-bottom: 16px; }
+  .footer-col a, .footer-col p { display: block; font-size: 14px; color: rgba(255,255,255,0.45); text-decoration: none; margin-bottom: 10px; transition: color 0.2s; line-height: 1.4; }
+  .footer-col a:hover { color: var(--white); }
+  .footer-bottom { max-width: 1100px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px; }
+  .footer-bottom p { font-size: 13px; color: rgba(255,255,255,0.3); }
+  .footer-bottom strong { color: var(--yellow); font-weight: 600; }
+
+  /* RESPONSIVE */
+  @media (max-width: 900px) {
+    nav { padding: 0 24px; }
+    .nav-links { display: none; }
+    .hero-inner { grid-template-columns: 1fr; padding: 60px 24px; }
+    .hero-card { display: none; }
+    section { padding: 72px 24px; }
+    .steps { grid-template-columns: 1fr; }
+    .service-body { grid-template-columns: 1fr; }
+    .service-feature { border-right: none !important; }
+    .service-feature:nth-last-child(-n+2) { border-bottom: 1px solid var(--gray-mid); }
+    .service-feature:last-child { border-bottom: none; }
+    .why-grid, .crew-grid { grid-template-columns: 1fr; }
+    .area-grid { grid-template-columns: 1fr; }
+    .reviews-grid { grid-template-columns: 1fr; }
+    .footer-inner { grid-template-columns: 1fr; gap: 32px; }
+    .trust-bar { padding: 16px 24px; gap: 24px; }
+    .cta-section { padding: 72px 24px; }
+  }
+
+  .reveal { opacity: 0; transform: translateY(28px); transition: opacity 0.6s ease, transform 0.6s ease; }
+  .reveal.in { opacity: 1; transform: translateY(0); }
+  .reveal-d1 { transition-delay: 0.1s; }
+  .reveal-d2 { transition-delay: 0.2s; }
+  .reveal-d3 { transition-delay: 0.3s; }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="#home" class="nav-logo">
+    <!-- Logo: bold road-stripe badge -->
+    <svg width="44" height="44" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <!-- Badge shape -->
+      <rect width="44" height="44" rx="6" fill="#FFD400"/>
+      <!-- Bold B letterform -->
+      <text x="7" y="33" font-family="'Barlow Condensed', sans-serif" font-weight="900" font-size="30" fill="#111111" letter-spacing="-1">BTB</text>
+      <!-- Road stripe underline -->
+      <rect x="7" y="36" width="8" height="3" rx="1.5" fill="#111111"/>
+      <rect x="18" y="36" width="8" height="3" rx="1.5" fill="#111111"/>
+      <rect x="29" y="36" width="8" height="3" rx="1.5" fill="#111111"/>
+    </svg>
+    <div class="logo-lockup">
+      <span class="logo-top">Black Top Bros</span>
+      <span class="logo-bottom">York &amp; Ogunquit, Maine</span>
+    </div>
+  </a>
+  <ul class="nav-links">
+    <li><a href="#services">Services</a></li>
+    <li><a href="#area">Service Area</a></li>
+    <li><a href="#faq">FAQ</a></li>
+    <li><a href="#book">Book Ahead</a></li>
+    <li><a href="#contact" class="nav-cta">Free Quote</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="hero-inner">
+    <div>
+      <div class="hero-badge">
+        <div class="hero-badge-dot"></div>
+        <span>York &amp; Ogunquit, Maine</span>
+      </div>
+      <h1>Protect<br>Your<br><em>Driveway.</em></h1>
+      <p class="hero-sub">Professional sealcoating by three local guys who know York inside out. Quality work, honest pricing, zero hassle.</p>
+      <div class="hero-actions">
+        <a href="tel:+12072193609" class="btn-primary">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.62 3.38 2 2 0 0 1 3.6 1.18h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.77a16 16 0 0 0 6.29 6.29l.95-.96a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          Call / Text for Free Quote
+        </a>
+        <a href="#book" class="btn-secondary">Book Ahead Online</a>
+      </div>
+    </div>
+    <div class="hero-card">
+      <div class="hero-card-title">Why sealcoat?</div>
+      <div class="hero-stats">
+        <div class="hero-stat"><div class="hero-stat-num">3x</div><div class="hero-stat-label">Longer driveway lifespan</div></div>
+        <div class="hero-stat"><div class="hero-stat-num">80%</div><div class="hero-stat-label">Cost savings vs. replacement</div></div>
+        <div class="hero-stat"><div class="hero-stat-num">2–3</div><div class="hero-stat-label">Years between coats</div></div>
+        <div class="hero-stat"><div class="hero-stat-num">1 day</div><div class="hero-stat-label">Typical dry time</div></div>
+      </div>
+      <ul class="hero-checklist">
+        <li><div class="check-icon"><svg viewBox="0 0 12 12" fill="none" stroke="#FFD400" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="2 6 5 9 10 3"/></svg></div>Blocks UV damage &amp; water intrusion</li>
+        <li><div class="check-icon"><svg viewBox="0 0 12 12" fill="none" stroke="#FFD400" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="2 6 5 9 10 3"/></svg></div>Prevents cracking &amp; crumbling</li>
+        <li><div class="check-icon"><svg viewBox="0 0 12 12" fill="none" stroke="#FFD400" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="2 6 5 9 10 3"/></svg></div>Restores that fresh-blacktop look</li>
+        <li><div class="check-icon"><svg viewBox="0 0 12 12" fill="none" stroke="#FFD400" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="2 6 5 9 10 3"/></svg></div>Boosts curb appeal &amp; home value</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- TRUST BAR -->
+<div class="trust-bar">
+  <div class="trust-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>Fully Insured</div>
+  <div class="trust-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>Free Estimates</div>
+  <div class="trust-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Satisfaction Guaranteed</div>
+  <div class="trust-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>York Locals</div>
+</div>
+
+<!-- SERVICES -->
+<section class="services" id="services">
+  <div class="section-inner">
+    <div class="reveal">
+      <div class="section-label">What we do</div>
+      <h2 class="section-title">Driveway<br><em>Sealcoating.</em></h2>
+      <p class="section-body">We specialize in one thing and we do it right. No upsells, no gimmicks — just quality asphalt sealcoating that lasts.</p>
+    </div>
+    <div class="service-card reveal">
+      <div class="service-header">
+        <h2>Full Driveway Sealcoating</h2>
+        <p>Complete protection from the ground up</p>
+      </div>
+      <div class="service-body">
+        <div class="service-feature"><span class="sf-icon">🧹</span><h4>Surface prep & cleaning</h4><p>We blow out debris, clean oily areas, and make sure your surface is ready before any sealer touches it.</p></div>
+        <div class="service-feature"><span class="sf-icon">🔧</span><h4>Crack filling</h4><p>We fill cracks before sealing to prevent water from getting underneath and making things worse over time.</p></div>
+        <div class="service-feature"><span class="sf-icon">🖌️</span><h4>Hand-edging</h4><p>Edges are done by hand for a clean, finished look along your grass, garden beds, and curbs.</p></div>
+        <div class="service-feature"><span class="sf-icon">💧</span><h4>Two-coat application</h4><p>Two layers of commercial-grade sealer for maximum durability and a deep, even finish that lasts.</p></div>
+      </div>
+      <div class="service-footer">
+        <div class="price-note">Free estimates<span>Most jobs $150–$400 depending on driveway size</span></div>
+        <a href="tel:+12072193609" class="btn-primary">Get Your Quote</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICE AREA -->
+<section class="area-section" id="area">
+  <div class="section-inner">
+    <div class="reveal">
+      <div class="section-label">Where we work</div>
+      <h2 class="section-title">Serving<br><em>Southern Maine.</em></h2>
+      <p class="section-body">Based in York, we cover the surrounding area and know every neighborhood. If you're nearby, reach out — we'll make it work.</p>
+    </div>
+    <div class="area-grid reveal">
+      <div class="area-card">
+        <div class="area-name">York, ME</div>
+        <div class="area-sub">Our home base — York Village, York Beach, Cape Neddick &amp; beyond</div>
+        <div class="area-tags">
+          <span class="area-tag">York Village</span>
+          <span class="area-tag">York Beach</span>
+          <span class="area-tag">Cape Neddick</span>
+          <span class="area-tag">York Harbor</span>
+        </div>
+      </div>
+      <div class="area-card">
+        <div class="area-name">Ogunquit, ME</div>
+        <div class="area-sub">Full coverage throughout Ogunquit and surrounding roads</div>
+        <div class="area-tags">
+          <span class="area-tag">Ogunquit Village</span>
+          <span class="area-tag">Perkins Cove</span>
+          <span class="area-tag">Moody</span>
+        </div>
+      </div>
+    </div>
+    <p style="color: var(--gray-text); font-size: 14px; margin-top: 20px; text-align: center;">Not sure if we cover your area? Just call or text — we'll let you know.</p>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq-section" id="faq">
+  <div class="section-inner">
+    <div class="reveal" style="text-align:center; max-width: 760px; margin: 0 auto 48px;">
+      <div class="section-label">FAQ</div>
+      <h2 class="section-title">Common <em>questions.</em></h2>
+    </div>
+    <div class="faq-list">
+      <div class="faq-item"><input type="checkbox" id="f1"><label class="faq-q" for="f1">How long does sealcoating take?</label><div class="faq-a">Most residential driveways take 2–4 hours from start to finish — prep, edging, two coats, and cleanup. We'll give you a time estimate when we come out for your quote.</div></div>
+      <div class="faq-item"><input type="checkbox" id="f2"><label class="faq-q" for="f2">When can I drive on it after?</label><div class="faq-a">We recommend staying off it for 24–48 hours to let the sealer fully cure. We'll walk you through everything before we leave.</div></div>
+      <div class="faq-item"><input type="checkbox" id="f3"><label class="faq-q" for="f3">How often should I sealcoat?</label><div class="faq-a">Every 2–3 years is the sweet spot. Too often causes buildup problems; too rarely lets UV and water damage set in. We'll let you know when yours is due.</div></div>
+      <div class="faq-item"><input type="checkbox" id="f4"><label class="faq-q" for="f4">What if it rains?</label><div class="faq-a">We won't sealcoat if rain is forecast within 24 hours. We keep an eye on the weather and proactively reschedule if needed — your time matters to us.</div></div>
+      <div class="faq-item"><input type="checkbox" id="f5"><label class="faq-q" for="f5">Is crack filling included?</label><div class="faq-a">Yes — basic crack filling is part of our prep process. Larger cracks or significant damage may need extra work, and we'll always tell you upfront if that's the case.</div></div>
+      <div class="faq-item"><input type="checkbox" id="f6"><label class="faq-q" for="f6">How do I get a price?</label><div class="faq-a">Just call or text! We'll swing by, measure the driveway, and give you a solid number on the spot. No obligation, no pressure.</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- BOOK AHEAD -->
+<section class="booking-section" id="book">
+  <div class="section-inner">
+    <div class="booking-wrap">
+
+      <!-- Left: copy + perks -->
+      <div class="booking-left reveal">
+        <div class="section-label">Book Ahead</div>
+        <h2 class="section-title">Don't want<br><em>to call?</em></h2>
+        <p class="section-body">No problem. Fill out the form and we'll reach back out to confirm your spot. Takes two minutes — we'll handle the rest.</p>
+        <div class="booking-perks">
+          <div class="booking-perk">
+            <div class="perk-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="#111" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.62 3.38 2 2 0 0 1 3.6 1.18h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.77a16 16 0 0 0 6.29 6.29l.95-.96a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            </div>
+            <div class="perk-text">
+              <h4>We call you back</h4>
+              <p>Submit your info and Laird or Jim will reach out to lock in a time that works for you.</p>
+            </div>
+          </div>
+          <div class="booking-perk">
+            <div class="perk-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="#111" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+            </div>
+            <div class="perk-text">
+              <h4>Lock in a date early</h4>
+              <p>Summer fills up fast. Get on our schedule before your neighbors do.</p>
+            </div>
+          </div>
+          <div class="booking-perk">
+            <div class="perk-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="#111" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            </div>
+            <div class="perk-text">
+              <h4>No commitment needed</h4>
+              <p>This isn't a contract — just a way to get the conversation started. Free estimate still applies.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right: form card -->
+      <div class="booking-form-card reveal reveal-d1">
+        <div class="booking-form-title">Request a Callback</div>
+        <p class="booking-form-sub">We'll get back to you within 24 hours — usually much faster.</p>
+
+        <div id="bookingForm">
+          <div class="form-row">
+            <div class="form-group">
+              <label for="b-name">Your Name</label>
+              <input type="text" id="b-name" placeholder="First &amp; last name" />
+            </div>
+            <div class="form-group">
+              <label for="b-phone">Phone Number</label>
+              <input type="tel" id="b-phone" placeholder="(207) 555-0100" />
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="b-address">Property Address</label>
+            <input type="text" id="b-address" placeholder="123 Shore Rd, York, ME" />
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="b-service">Service Needed</label>
+              <select id="b-service">
+                <option value="" disabled selected>Select one…</option>
+                <option>Driveway Sealcoating</option>
+                <option>Crack Filling</option>
+                <option>Both / Not Sure</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="b-timing">Preferred Timing</label>
+              <select id="b-timing">
+                <option value="" disabled selected>Select one…</option>
+                <option>ASAP</option>
+                <option>Within 2 weeks</option>
+                <option>This month</option>
+                <option>Early summer</option>
+                <option>Late summer / fall</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="b-notes">Anything else we should know? <span style="font-weight:400;text-transform:none;letter-spacing:0">(optional)</span></label>
+            <textarea id="b-notes" placeholder="Driveway size estimate, gate access, cracks we should know about…"></textarea>
+          </div>
+          <button class="form-submit" id="bookingSubmit" onclick="submitBooking()">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+            Send My Request
+          </button>
+          <p class="form-note">🔒 Your info is only used to follow up with you. No spam, ever.</p>
+        </div>
+
+        <!-- Success message -->
+        <div class="booking-success" id="bookingSuccess">
+          <div class="success-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#FFD400" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+          </div>
+          <h3>You're on our radar!</h3>
+          <p>Thanks for reaching out. Laird or Jim will call or text you back shortly to get you scheduled.<br><br>In a hurry? Call us directly:</p>
+          <div style="display:flex; gap:12px; justify-content:center; margin-top:20px; flex-wrap:wrap;">
+            <a href="tel:+12072193609" class="btn-primary" style="font-size:14px; padding:12px 20px;">Laird — (207) 219-3609</a>
+            <a href="tel:+19707569895" class="btn-secondary" style="font-size:14px; padding:12px 20px; color:var(--black); border-color:rgba(0,0,0,0.2);">Jim — (970) 756-9895</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section" id="contact">
+  <div class="reveal">
+    <div class="section-label dark">Ready to get started?</div>
+    <h2>Let's seal<br>the deal.</h2>
+    <p>Call or text for your free estimate. We'll get back to you fast.</p>
+    <div class="cta-phones">
+      <a href="tel:+12072193609" class="phone-btn">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.62 3.38 2 2 0 0 1 3.6 1.18h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.77a16 16 0 0 0 6.29 6.29l.95-.96a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        <div><span class="phone-label">Laird — Call or Text</span>(207) 219-3609</div>
+      </a>
+      <a href="tel:+19707569895" class="phone-btn">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.62 3.38 2 2 0 0 1 3.6 1.18h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.77a16 16 0 0 0 6.29 6.29l.95-.96a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        <div><span class="phone-label">Jim — Call or Text</span>(970) 756-9895</div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <div style="display:inline-flex; align-items:center; gap:14px;">
+        <svg width="38" height="38" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect width="44" height="44" rx="6" fill="#FFD400"/>
+          <text x="7" y="33" font-family="'Barlow Condensed', sans-serif" font-weight="900" font-size="30" fill="#111111" letter-spacing="-1">BTB</text>
+          <rect x="7" y="36" width="8" height="3" rx="1.5" fill="#111111"/>
+          <rect x="18" y="36" width="8" height="3" rx="1.5" fill="#111111"/>
+          <rect x="29" y="36" width="8" height="3" rx="1.5" fill="#111111"/>
+        </svg>
+        <div class="logo-lockup">
+          <span class="logo-top">Black Top Bros</span>
+          <span class="logo-bottom">York &amp; Ogunquit, Maine</span>
+        </div>
+      </div>
+      <p>Three local athletes turned business owners. We bring hustle, honesty, and quality work to every driveway in York and Ogunquit.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Services</h4>
+      <a href="#services">Driveway Sealcoating</a>
+      <a href="#services">Crack Filling</a>
+      <a href="#services">Surface Prep</a>
+    </div>
+    <div class="footer-col">
+      <h4>Contact</h4>
+      <a href="tel:+12072193609">Laird: (207) 219-3609</a>
+      <a href="tel:+19707569895">Jim: (970) 756-9895</a>
+      <p>York &amp; Ogunquit, ME</p>
+      <p>Call or text anytime</p>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>&copy; 2025 <strong>Black Top Bros</strong>. York, Maine. All rights reserved.</p>
+    <p>Proudly local. Fully insured.</p>
+  </div>
+</footer>
+
+<script>
+  const reveals = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(e => { if(e.isIntersecting){ e.target.classList.add('in'); observer.unobserve(e.target); } });
+  }, { threshold: 0.12 });
+  reveals.forEach(el => observer.observe(el));
+  function submitBooking() {
+    const name = document.getElementById('b-name').value.trim();
+    const phone = document.getElementById('b-phone').value.trim();
+    const address = document.getElementById('b-address').value.trim();
+    const service = document.getElementById('b-service').value;
+    const timing = document.getElementById('b-timing').value;
+
+    if (!name || !phone || !address || !service || !timing) {
+      // Highlight empty required fields
+      ['b-name','b-phone','b-address','b-service','b-timing'].forEach(id => {
+        const el = document.getElementById(id);
+        if (!el.value.trim()) {
+          el.style.borderColor = '#e05252';
+          el.addEventListener('input', () => el.style.borderColor = '', { once: true });
+        }
+      });
+      return;
+    }
+
+    const btn = document.getElementById('bookingSubmit');
+    btn.disabled = true;
+    btn.innerHTML = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><polyline points="20 6 9 17 4 12"/></svg> Sending…';
+
+    // Simulate submission (replace with a real backend/Formspree/Netlify Forms endpoint)
+    setTimeout(() => {
+      document.getElementById('bookingForm').style.display = 'none';
+      const success = document.getElementById('bookingSuccess');
+      success.style.display = 'block';
+    }, 900);
+  }
+</script>
+</body>
+</html>
