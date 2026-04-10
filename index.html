@@ -727,15 +727,15 @@
     entries.forEach(e => { if(e.isIntersecting){ e.target.classList.add('in'); observer.unobserve(e.target); } });
   }, { threshold: 0.12 });
   reveals.forEach(el => observer.observe(el));
-  function submitBooking() {
+  async function submitBooking() {
     const name = document.getElementById('b-name').value.trim();
     const phone = document.getElementById('b-phone').value.trim();
     const address = document.getElementById('b-address').value.trim();
     const service = document.getElementById('b-service').value;
     const timing = document.getElementById('b-timing').value;
+    const notes = document.getElementById('b-notes').value.trim();
 
     if (!name || !phone || !address || !service || !timing) {
-      // Highlight empty required fields
       ['b-name','b-phone','b-address','b-service','b-timing'].forEach(id => {
         const el = document.getElementById(id);
         if (!el.value.trim()) {
@@ -750,12 +750,24 @@
     btn.disabled = true;
     btn.innerHTML = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><polyline points="20 6 9 17 4 12"/></svg> Sending…';
 
-    // Simulate submission (replace with a real backend/Formspree/Netlify Forms endpoint)
-    setTimeout(() => {
-      document.getElementById('bookingForm').style.display = 'none';
-      const success = document.getElementById('bookingSuccess');
-      success.style.display = 'block';
-    }, 900);
+    try {
+      const response = await fetch('https://formspree.io/f/mbdpvqvp', {
+        method: 'POST',
+        headers: { 'Accept': 'application/json', 'Content-Type': 'application/json' },
+        body: JSON.stringify({ name, phone, address, service, timing, notes })
+      });
+
+      if (response.ok) {
+        document.getElementById('bookingForm').style.display = 'none';
+        document.getElementById('bookingSuccess').style.display = 'block';
+      } else {
+        throw new Error('Server error');
+      }
+    } catch (err) {
+      btn.disabled = false;
+      btn.innerHTML = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg> Send My Request';
+      alert('Something went wrong — please try again or give us a call directly.');
+    }
   }
 </script>
 </body>
