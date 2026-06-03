@@ -31,15 +31,26 @@
     border-bottom: 3px solid var(--yellow);
   }
   .nav-logo { display: flex; align-items: center; gap: 14px; text-decoration: none; }
+
+  /* BTB Logo badge */
+  .btb-badge {
+    display: inline-flex; align-items: center; justify-content: center;
+    width: 44px; height: 44px; border-radius: 6px;
+    background: var(--yellow); flex-shrink: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 900; font-size: 15px; letter-spacing: 0.5px;
+    color: var(--black); text-decoration: none;
+  }
+
   .logo-lockup { display: flex; flex-direction: column; line-height: 1; }
   .logo-top {
     font-family: var(--font-display); font-weight: 900; font-size: 20px;
     color: var(--white); letter-spacing: 0.06em; text-transform: uppercase;
   }
   .logo-bottom {
-    font-family: var(--font-display); font-weight: 700; font-size: 11px;
-    color: var(--yellow); letter-spacing: 0.2em; text-transform: uppercase;
-    margin-top: 1px;
+    font-family: var(--font-display); font-weight: 700; font-size: 14px;
+    color: var(--yellow); letter-spacing: 0.15em; text-transform: uppercase;
+    margin-top: 3px;
   }
   .nav-links { display: flex; align-items: center; gap: 32px; list-style: none; }
   .nav-links a {
@@ -48,6 +59,81 @@
     color: rgba(255,255,255,0.75); text-decoration: none; transition: color 0.2s;
   }
   .nav-links a:hover { color: var(--yellow); }
+  .nav-cta {
+    background: var(--yellow); color: var(--black) !important;
+    padding: 10px 22px; border-radius: 4px; font-weight: 700 !important;
+  }
+  .nav-cta:hover { background: var(--yellow-dark) !important; }
+
+  /* HERO */
+  .hero {
+    min-height: 100vh; background: var(--black);
+    display: flex; align-items: center;
+    position: relative; overflow: hidden; padding-top: 68px;
+  }
+  .hero-inner {
+    position: relative; z-index: 2; max-width: 1100px;
+    margin: 0 auto; padding: 80px 40px;
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 60px; align-items: center; width: 100%;
+  }
+  .hero-badge {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: var(--yellow); border: 1px solid var(--yellow);
+    border-radius: 100px; padding: 6px 16px; margin-bottom: 24px;
+  }
+  .hero-badge-dot {
+    width: 8px; height: 8px; background: var(--black);
+    border-radius: 50%; animation: pulse 2s infinite;
+  }
+  @keyframes pulse { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:.6;transform:scale(.85)} }
+  .hero-badge span { font-size: 14px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: var(--black); }
+  .hero h1 {
+    font-family: var(--font-display); font-weight: 900;
+    font-size: clamp(52px, 7vw, 88px); line-height: 0.92;
+    color: var(--white); letter-spacing: -0.01em; text-transform: uppercase; margin-bottom: 24px;
+  }
+  .hero h1 em { font-style: normal; color: var(--yellow); display: block; }
+  .hero-sub { font-size: 18px; line-height: 1.6; color: rgba(255,255,255,0.82); margin-bottom: 40px; max-width: 460px; }
+  .hero-actions { display: flex; gap: 16px; flex-wrap: wrap; }
+  .btn-primary {
+    display: inline-flex; align-items: center; gap: 10px;
+    background: var(--yellow); color: var(--black);
+    font-family: var(--font-body); font-weight: 700; font-size: 16px;
+    padding: 16px 32px; border-radius: 4px; text-decoration: none;
+    transition: background 0.2s, transform 0.15s; letter-spacing: 0.02em;
+  }
+  .btn-primary:hover { background: var(--yellow-dark); transform: translateY(-1px); }
+  .btn-secondary {
+    display: inline-flex; align-items: center; gap: 10px;
+    background: transparent; color: var(--white);
+    font-family: var(--font-body); font-weight: 600; font-size: 16px;
+    padding: 16px 28px; border-radius: 4px;
+    border: 1.5px solid rgba(255,255,255,0.25); text-decoration: none;
+    transition: border-color 0.2s, color 0.2s;
+  }
+  .btn-secondary:hover { border-color: var(--yellow); color: var(--yellow); }
+  .hero-card {
+    background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 12px; padding: 36px; backdrop-filter: blur(4px);
+  }
+  .hero-card-title { font-family: var(--font-display); font-weight: 700; font-size: 14px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--yellow); margin-bottom: 24px; }
+  .hero-stats { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 28px; }
+  .hero-stat { background: rgba(255,255,255,0.05); border-radius: 8px; padding: 20px; border: 1px solid rgba(255,255,255,0.08); }
+  .hero-stat-num { font-family: var(--font-display); font-weight: 900; font-size: 36px; color: var(--yellow); line-height: 1; margin-bottom: 6px; }
+  .hero-stat-label { font-size: 14px; color: rgba(255,255,255,0.8); font-weight: 500; line-height: 1.3; }
+  .hero-checklist { list-style: none; display: flex; flex-direction: column; gap: 12px; }
+  .hero-checklist li { display: flex; align-items: center; gap: 12px; font-size: 15px; color: rgba(255,255,255,0.9); font-weight: 500; }
+  .check-icon { width: 22px; height: 22px; background: rgba(255,212,0,0.15); border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+  .check-icon svg { width: 12px; height: 12px; }
+
+  /* TRUST BAR */
+  .trust-bar {
+    background: var(--yellow); padding: 18px 40px;
+    display: flex; justify-content: center; gap: 56px; flex-wrap: wrap;
+  }
+  .trust-item { display: flex; align-items: center; gap: 10px; font-family: var(--font-body); font-weight: 700; font-size: 14px; letter-spacing: 0.05em; text-transform: uppercase; color: var(--black); }
+  .trust-item svg { width: 20px; height: 20px; flex-shrink: 0; }
 
   /* BOOKING FORM */
   .booking-section { background: var(--gray-light); }
@@ -80,7 +166,7 @@
   .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
   .form-group { display: flex; flex-direction: column; gap: 6px; margin-bottom: 14px; }
   .form-group label {
-    font-size: 12px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase;
+    font-size: 14px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase;
     color: var(--black);
   }
   .form-group input,
@@ -112,9 +198,7 @@
   .form-note { font-size: 12px; color: var(--gray-text); text-align: center; margin-top: 12px; }
 
   /* SUCCESS STATE */
-  .booking-success {
-    display: none; text-align: center; padding: 20px 0;
-  }
+  .booking-success { display: none; text-align: center; padding: 20px 0; }
   .success-icon {
     width: 64px; height: 64px; background: rgba(255,212,0,0.12);
     border: 2px solid var(--yellow); border-radius: 50%;
@@ -129,92 +213,17 @@
     .booking-wrap { grid-template-columns: 1fr; gap: 40px; }
     .form-row { grid-template-columns: 1fr; }
   }
-  .nav-cta {
-    background: var(--yellow); color: var(--black) !important;
-    padding: 10px 22px; border-radius: 4px; font-weight: 700 !important;
-  }
-  .nav-cta:hover { background: var(--yellow-dark) !important; }
-
-  /* HERO */
-  .hero {
-    min-height: 100vh; background: var(--black);
-    display: flex; align-items: center;
-    position: relative; overflow: hidden; padding-top: 68px;
-  }
-  .hero-inner {
-    position: relative; z-index: 2; max-width: 1100px;
-    margin: 0 auto; padding: 80px 40px;
-    display: grid; grid-template-columns: 1fr 1fr;
-    gap: 60px; align-items: center; width: 100%;
-  }
-  .hero-badge {
-    display: inline-flex; align-items: center; gap: 8px;
-    background: rgba(255,212,0,0.12); border: 1px solid rgba(255,212,0,0.3);
-    border-radius: 100px; padding: 6px 16px; margin-bottom: 24px;
-  }
-  .hero-badge-dot {
-    width: 8px; height: 8px; background: var(--yellow);
-    border-radius: 50%; animation: pulse 2s infinite;
-  }
-  @keyframes pulse { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:.6;transform:scale(.85)} }
-  .hero-badge span { font-size: 13px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: var(--yellow); }
-  .hero h1 {
-    font-family: var(--font-display); font-weight: 900;
-    font-size: clamp(52px, 7vw, 88px); line-height: 0.92;
-    color: var(--white); letter-spacing: -0.01em; text-transform: uppercase; margin-bottom: 24px;
-  }
-  .hero h1 em { font-style: normal; color: var(--yellow); display: block; }
-  .hero-sub { font-size: 18px; line-height: 1.6; color: rgba(255,255,255,0.65); margin-bottom: 40px; max-width: 460px; }
-  .hero-actions { display: flex; gap: 16px; flex-wrap: wrap; }
-  .btn-primary {
-    display: inline-flex; align-items: center; gap: 10px;
-    background: var(--yellow); color: var(--black);
-    font-family: var(--font-body); font-weight: 700; font-size: 16px;
-    padding: 16px 32px; border-radius: 4px; text-decoration: none;
-    transition: background 0.2s, transform 0.15s; letter-spacing: 0.02em;
-  }
-  .btn-primary:hover { background: var(--yellow-dark); transform: translateY(-1px); }
-  .btn-secondary {
-    display: inline-flex; align-items: center; gap: 10px;
-    background: transparent; color: var(--white);
-    font-family: var(--font-body); font-weight: 600; font-size: 16px;
-    padding: 16px 28px; border-radius: 4px;
-    border: 1.5px solid rgba(255,255,255,0.25); text-decoration: none;
-    transition: border-color 0.2s, color 0.2s;
-  }
-  .btn-secondary:hover { border-color: var(--yellow); color: var(--yellow); }
-  .hero-card {
-    background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1);
-    border-radius: 12px; padding: 36px; backdrop-filter: blur(4px);
-  }
-  .hero-card-title { font-family: var(--font-display); font-weight: 700; font-size: 13px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--yellow); margin-bottom: 24px; }
-  .hero-stats { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 28px; }
-  .hero-stat { background: rgba(255,255,255,0.05); border-radius: 8px; padding: 20px; border: 1px solid rgba(255,255,255,0.08); }
-  .hero-stat-num { font-family: var(--font-display); font-weight: 900; font-size: 36px; color: var(--yellow); line-height: 1; margin-bottom: 6px; }
-  .hero-stat-label { font-size: 13px; color: rgba(255,255,255,0.55); font-weight: 500; line-height: 1.3; }
-  .hero-checklist { list-style: none; display: flex; flex-direction: column; gap: 12px; }
-  .hero-checklist li { display: flex; align-items: center; gap: 12px; font-size: 15px; color: rgba(255,255,255,0.8); font-weight: 500; }
-  .check-icon { width: 22px; height: 22px; background: rgba(255,212,0,0.15); border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
-  .check-icon svg { width: 12px; height: 12px; }
-
-  /* TRUST BAR */
-  .trust-bar {
-    background: var(--yellow); padding: 18px 40px;
-    display: flex; justify-content: center; gap: 56px; flex-wrap: wrap;
-  }
-  .trust-item { display: flex; align-items: center; gap: 10px; font-family: var(--font-body); font-weight: 700; font-size: 14px; letter-spacing: 0.05em; text-transform: uppercase; color: var(--black); }
-  .trust-item svg { width: 20px; height: 20px; flex-shrink: 0; }
 
   /* SECTIONS */
   section { padding: 96px 40px; }
   .section-inner { max-width: 1100px; margin: 0 auto; }
   .section-label {
     font-family: var(--font-body); font-weight: 700; font-size: 12px;
-    letter-spacing: 0.14em; text-transform: uppercase; color: var(--yellow);
-    background: rgba(255,212,0,0.1); border: 1px solid rgba(255,212,0,0.25);
+    letter-spacing: 0.14em; text-transform: uppercase; color: var(--black);
+    background: var(--yellow); border: 1px solid var(--yellow-dark);
     display: inline-block; padding: 5px 14px; border-radius: 100px; margin-bottom: 16px;
   }
-  .section-label.dark { color: var(--black); background: rgba(0,0,0,0.1); border-color: rgba(0,0,0,0.2); }
+  .section-label.dark { color: var(--black); background: rgba(0,0,0,0.15); border-color: rgba(0,0,0,0.25); }
   .section-title {
     font-family: var(--font-display); font-weight: 900;
     font-size: clamp(36px, 5vw, 56px); line-height: 0.95;
@@ -223,21 +232,8 @@
   .section-title em { font-style: normal; color: var(--yellow); }
   .section-body { font-size: 17px; line-height: 1.65; color: var(--gray-text); max-width: 560px; margin-bottom: 56px; }
 
-  /* HOW IT WORKS */
-  .how-it-works { background: var(--black); }
-  .how-it-works .section-title { color: var(--white); }
-  .how-it-works .section-body { color: rgba(255,255,255,0.55); }
-  .steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; }
-  .step { background: rgba(255,255,255,0.04); padding: 40px 36px; position: relative; transition: background 0.2s; }
-  .step:hover { background: rgba(255,255,255,0.07); }
-  .step-num { font-family: var(--font-display); font-weight: 900; font-size: 72px; line-height: 1; color: var(--yellow); opacity: 0.25; position: absolute; top: 24px; right: 28px; }
-  .step-icon { width: 52px; height: 52px; background: rgba(255,212,0,0.1); border-radius: 8px; display: flex; align-items: center; justify-content: center; margin-bottom: 24px; border: 1px solid rgba(255,212,0,0.2); }
-  .step-icon svg { width: 26px; height: 26px; }
-  .step h3 { font-family: var(--font-display); font-weight: 700; font-size: 22px; text-transform: uppercase; color: var(--white); margin-bottom: 12px; letter-spacing: 0.02em; }
-  .step p { font-size: 15px; line-height: 1.6; color: rgba(255,255,255,0.5); }
-
   /* SERVICES */
-  .services { background: var(--gray-light); }
+  .services { background: var(--white); }
   .service-card { background: var(--white); border-radius: 10px; overflow: hidden; border: 1px solid var(--gray-mid); }
   .service-header { background: var(--black); padding: 32px 36px; position: relative; overflow: hidden; }
   .service-header::after { content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 4px; background: var(--yellow); }
@@ -255,6 +251,7 @@
   .price-note span { font-family: var(--font-body); font-size: 14px; font-weight: 500; color: var(--gray-text); text-transform: none; display: block; margin-top: 2px; }
 
   /* WHY US */
+  .why-section { background: var(--gray-light); }
   .why-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
   .why-card { padding: 36px; border: 1px solid var(--gray-mid); border-radius: 10px; background: var(--white); transition: border-color 0.2s, transform 0.2s; }
   .why-card:hover { border-color: var(--yellow); transform: translateY(-3px); }
@@ -262,73 +259,8 @@
   .why-card h3 { font-family: var(--font-display); font-weight: 700; font-size: 22px; text-transform: uppercase; color: var(--black); margin-bottom: 12px; letter-spacing: 0.02em; }
   .why-card p { font-size: 15px; line-height: 1.65; color: var(--gray-text); }
 
-  /* CREW */
-  .crew-section { background: var(--black); }
-  .crew-section .section-title { color: var(--white); }
-  .crew-section .section-body { color: rgba(255,255,255,0.5); }
-  .crew-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
-  .crew-card {
-    background: rgba(255,255,255,0.04);
-    border: 1px solid rgba(255,255,255,0.09);
-    border-radius: 12px; overflow: hidden;
-    transition: border-color 0.25s, transform 0.25s;
-  }
-  .crew-card:hover { border-color: rgba(255,212,0,0.45); transform: translateY(-4px); }
-  .crew-avatar {
-    height: 120px;
-    background: var(--black);
-    display: flex; align-items: center; justify-content: center;
-    position: relative; overflow: hidden;
-    border-bottom: 3px solid var(--yellow);
-  }
-  .crew-initials {
-    font-family: var(--font-display); font-weight: 900; font-size: 52px;
-    color: var(--yellow); letter-spacing: -0.02em; line-height: 1;
-    opacity: 0.9;
-  }
-  .crew-stripe {
-    position: absolute; bottom: 0; left: 0; right: 0; height: 3px;
-    background: var(--yellow);
-  }
-  .crew-body { padding: 28px; }
-  .crew-name { font-family: var(--font-display); font-weight: 900; font-size: 28px; text-transform: uppercase; color: var(--white); letter-spacing: 0.02em; line-height: 1; margin-bottom: 6px; }
-  .crew-role { font-size: 13px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--yellow); margin-bottom: 16px; }
-  .crew-sports {
-    display: flex; gap: 8px; margin-bottom: 20px; flex-wrap: wrap;
-  }
-  .sport-tag {
-    display: inline-flex; align-items: center; gap: 6px;
-    font-size: 12px; font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase;
-    color: rgba(255,255,255,0.6);
-    background: rgba(255,255,255,0.07);
-    border: 1px solid rgba(255,255,255,0.12);
-    padding: 4px 12px; border-radius: 100px;
-  }
-  .crew-phone {
-    display: flex; align-items: center; gap: 8px;
-    font-size: 15px; font-weight: 600; color: rgba(255,255,255,0.45);
-    text-decoration: none; transition: color 0.2s;
-  }
-  .crew-phone:hover { color: var(--yellow); }
-  .crew-phone svg { width: 15px; height: 15px; flex-shrink: 0; }
-  .crew-no-phone { font-size: 14px; color: rgba(255,255,255,0.25); }
-
-  /* AREA */
-  .area-section { background: var(--gray-light); }
-  .area-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
-  .area-card {
-    background: var(--white); border: 1px solid var(--gray-mid);
-    border-radius: 10px; padding: 32px; position: relative;
-    overflow: hidden; transition: border-color 0.2s;
-    border-top: 4px solid var(--yellow);
-  }
-  .area-card:hover { border-color: var(--yellow); }
-  .area-name { font-family: var(--font-display); font-weight: 900; font-size: 38px; text-transform: uppercase; color: var(--black); margin-bottom: 8px; line-height: 1; }
-  .area-sub { font-size: 14px; color: var(--gray-text); margin-bottom: 20px; }
-  .area-tags { display: flex; flex-wrap: wrap; gap: 8px; }
-  .area-tag { font-size: 12px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: var(--black); background: rgba(0,0,0,0.05); border: 1px solid rgba(0,0,0,0.1); padding: 4px 12px; border-radius: 100px; }
-
   /* REVIEWS */
+  .reviews-section { background: var(--white); }
   .reviews-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
   .review-card { background: var(--white); border: 1px solid var(--gray-mid); border-radius: 10px; padding: 28px; }
   .stars { display: flex; gap: 3px; margin-bottom: 16px; }
@@ -364,12 +296,12 @@
   /* FOOTER */
   footer { background: #0A0A0A; padding: 48px 40px 32px; border-top: 3px solid var(--yellow); }
   .footer-inner { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 48px; padding-bottom: 40px; border-bottom: 1px solid rgba(255,255,255,0.1); margin-bottom: 32px; }
-  .footer-brand p { font-size: 14px; line-height: 1.65; color: rgba(255,255,255,0.4); margin-top: 16px; max-width: 320px; }
+  .footer-brand p { font-size: 15px; line-height: 1.65; color: rgba(255,255,255,0.75); margin-top: 16px; max-width: 320px; }
   .footer-col h4 { font-family: var(--font-display); font-weight: 700; font-size: 13px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--yellow); margin-bottom: 16px; }
-  .footer-col a, .footer-col p { display: block; font-size: 14px; color: rgba(255,255,255,0.45); text-decoration: none; margin-bottom: 10px; transition: color 0.2s; line-height: 1.4; }
+  .footer-col a, .footer-col p { display: block; font-size: 15px; color: rgba(255,255,255,0.75); text-decoration: none; margin-bottom: 10px; transition: color 0.2s; line-height: 1.4; }
   .footer-col a:hover { color: var(--white); }
   .footer-bottom { max-width: 1100px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px; }
-  .footer-bottom p { font-size: 13px; color: rgba(255,255,255,0.3); }
+  .footer-bottom p { font-size: 14px; color: rgba(255,255,255,0.7); }
   .footer-bottom strong { color: var(--yellow); font-weight: 600; }
 
   /* RESPONSIVE */
@@ -379,13 +311,11 @@
     .hero-inner { grid-template-columns: 1fr; padding: 60px 24px; }
     .hero-card { display: none; }
     section { padding: 72px 24px; }
-    .steps { grid-template-columns: 1fr; }
     .service-body { grid-template-columns: 1fr; }
     .service-feature { border-right: none !important; }
     .service-feature:nth-last-child(-n+2) { border-bottom: 1px solid var(--gray-mid); }
     .service-feature:last-child { border-bottom: none; }
-    .why-grid, .crew-grid { grid-template-columns: 1fr; }
-    .area-grid { grid-template-columns: 1fr; }
+    .why-grid { grid-template-columns: 1fr; }
     .reviews-grid { grid-template-columns: 1fr; }
     .footer-inner { grid-template-columns: 1fr; gap: 32px; }
     .trust-bar { padding: 16px 24px; gap: 24px; }
@@ -404,27 +334,16 @@
 <!-- NAV -->
 <nav>
   <a href="#home" class="nav-logo">
-    <!-- Logo: bold road-stripe badge -->
-    <svg width="44" height="44" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <!-- Badge shape -->
-      <rect width="44" height="44" rx="6" fill="#FFD400"/>
-      <!-- Bold B letterform -->
-      <text x="7" y="33" font-family="'Barlow Condensed', sans-serif" font-weight="900" font-size="30" fill="#111111" letter-spacing="-1">BTB</text>
-      <!-- Road stripe underline -->
-      <rect x="7" y="36" width="8" height="3" rx="1.5" fill="#111111"/>
-      <rect x="18" y="36" width="8" height="3" rx="1.5" fill="#111111"/>
-      <rect x="29" y="36" width="8" height="3" rx="1.5" fill="#111111"/>
-    </svg>
+    <span class="btb-badge">BTB</span>
     <div class="logo-lockup">
       <span class="logo-top">Black Top Bros</span>
       <span class="logo-bottom">York &amp; Ogunquit, Maine</span>
     </div>
   </a>
   <ul class="nav-links">
-    <li><a href="#services">Services</a></li>
-    <li><a href="#area">Service Area</a></li>
-    <li><a href="#faq">FAQ</a></li>
     <li><a href="#book">Book Ahead</a></li>
+    <li><a href="#services">Services</a></li>
+    <li><a href="#faq">FAQ</a></li>
     <li><a href="#contact" class="nav-cta">Free Quote</a></li>
   </ul>
 </nav>
@@ -438,7 +357,7 @@
         <span>York &amp; Ogunquit, Maine</span>
       </div>
       <h1>Protect<br>Your<br><em>Driveway.</em></h1>
-      <p class="hero-sub">Professional sealcoating by three local guys who know York inside out. Quality work, honest pricing, zero hassle.</p>
+      <p class="hero-sub">Professional sealcoating by local guys who know York inside out. Quality work, honest pricing, zero hassle.</p>
       <div class="hero-actions">
         <a href="tel:+12072193609" class="btn-primary">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.62 3.38 2 2 0 0 1 3.6 1.18h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.77a16 16 0 0 0 6.29 6.29l.95-.96a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
@@ -467,91 +386,21 @@
 
 <!-- TRUST BAR -->
 <div class="trust-bar">
-  <div class="trust-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>Fully Insured</div>
-  <div class="trust-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>Free Estimates</div>
-  <div class="trust-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Satisfaction Guaranteed</div>
-  <div class="trust-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>York Locals</div>
+  <div class="trust-item">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+    Free Estimates
+  </div>
+  <div class="trust-item">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+    Satisfaction Guaranteed
+  </div>
+  <div class="trust-item">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+    York Locals
+  </div>
 </div>
 
-<!-- SERVICES -->
-<section class="services" id="services">
-  <div class="section-inner">
-    <div class="reveal">
-      <div class="section-label">What we do</div>
-      <h2 class="section-title">Driveway<br><em>Sealcoating.</em></h2>
-      <p class="section-body">We specialize in one thing and we do it right. No upsells, no gimmicks — just quality asphalt sealcoating that lasts.</p>
-    </div>
-    <div class="service-card reveal">
-      <div class="service-header">
-        <h2>Full Driveway Sealcoating</h2>
-        <p>Complete protection from the ground up</p>
-      </div>
-      <div class="service-body">
-        <div class="service-feature"><span class="sf-icon">🧹</span><h4>Surface prep & cleaning</h4><p>We blow out debris, clean oily areas, and make sure your surface is ready before any sealer touches it.</p></div>
-        <div class="service-feature"><span class="sf-icon">🔧</span><h4>Crack filling</h4><p>We fill cracks before sealing to prevent water from getting underneath and making things worse over time.</p></div>
-        <div class="service-feature"><span class="sf-icon">🖌️</span><h4>Hand-edging</h4><p>Edges are done by hand for a clean, finished look along your grass, garden beds, and curbs.</p></div>
-        <div class="service-feature"><span class="sf-icon">💧</span><h4>Two-coat application</h4><p>Two layers of commercial-grade sealer for maximum durability and a deep, even finish that lasts.</p></div>
-      </div>
-      <div class="service-footer">
-        <div class="price-note">Free estimates<span>Most jobs $150–$400 depending on driveway size</span></div>
-        <a href="tel:+12072193609" class="btn-primary">Get Your Quote</a>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- SERVICE AREA -->
-<section class="area-section" id="area">
-  <div class="section-inner">
-    <div class="reveal">
-      <div class="section-label">Where we work</div>
-      <h2 class="section-title">Serving<br><em>Southern Maine.</em></h2>
-      <p class="section-body">Based in York, we cover the surrounding area and know every neighborhood. If you're nearby, reach out — we'll make it work.</p>
-    </div>
-    <div class="area-grid reveal">
-      <div class="area-card">
-        <div class="area-name">York, ME</div>
-        <div class="area-sub">Our home base — York Village, York Beach, Cape Neddick &amp; beyond</div>
-        <div class="area-tags">
-          <span class="area-tag">York Village</span>
-          <span class="area-tag">York Beach</span>
-          <span class="area-tag">Cape Neddick</span>
-          <span class="area-tag">York Harbor</span>
-        </div>
-      </div>
-      <div class="area-card">
-        <div class="area-name">Ogunquit, ME</div>
-        <div class="area-sub">Full coverage throughout Ogunquit and surrounding roads</div>
-        <div class="area-tags">
-          <span class="area-tag">Ogunquit Village</span>
-          <span class="area-tag">Perkins Cove</span>
-          <span class="area-tag">Moody</span>
-        </div>
-      </div>
-    </div>
-    <p style="color: var(--gray-text); font-size: 14px; margin-top: 20px; text-align: center;">Not sure if we cover your area? Just call or text — we'll let you know.</p>
-  </div>
-</section>
-
-<!-- FAQ -->
-<section class="faq-section" id="faq">
-  <div class="section-inner">
-    <div class="reveal" style="text-align:center; max-width: 760px; margin: 0 auto 48px;">
-      <div class="section-label">FAQ</div>
-      <h2 class="section-title">Common <em>questions.</em></h2>
-    </div>
-    <div class="faq-list">
-      <div class="faq-item"><input type="checkbox" id="f1"><label class="faq-q" for="f1">How long does sealcoating take?</label><div class="faq-a">Most residential driveways take 2–4 hours from start to finish — prep, edging, two coats, and cleanup. We'll give you a time estimate when we come out for your quote.</div></div>
-      <div class="faq-item"><input type="checkbox" id="f2"><label class="faq-q" for="f2">When can I drive on it after?</label><div class="faq-a">We recommend staying off it for 24–48 hours to let the sealer fully cure. We'll walk you through everything before we leave.</div></div>
-      <div class="faq-item"><input type="checkbox" id="f3"><label class="faq-q" for="f3">How often should I sealcoat?</label><div class="faq-a">Every 2–3 years is the sweet spot. Too often causes buildup problems; too rarely lets UV and water damage set in. We'll let you know when yours is due.</div></div>
-      <div class="faq-item"><input type="checkbox" id="f4"><label class="faq-q" for="f4">What if it rains?</label><div class="faq-a">We won't sealcoat if rain is forecast within 24 hours. We keep an eye on the weather and proactively reschedule if needed — your time matters to us.</div></div>
-      <div class="faq-item"><input type="checkbox" id="f5"><label class="faq-q" for="f5">Is crack filling included?</label><div class="faq-a">Yes — basic crack filling is part of our prep process. Larger cracks or significant damage may need extra work, and we'll always tell you upfront if that's the case.</div></div>
-      <div class="faq-item"><input type="checkbox" id="f6"><label class="faq-q" for="f6">How do I get a price?</label><div class="faq-a">Just call or text! We'll swing by, measure the driveway, and give you a solid number on the spot. No obligation, no pressure.</div></div>
-    </div>
-  </div>
-</section>
-
-<!-- BOOK AHEAD -->
+<!-- BOOK AHEAD — near top, right after trust bar -->
 <section class="booking-section" id="book">
   <div class="section-inner">
     <div class="booking-wrap">
@@ -663,6 +512,50 @@
   </div>
 </section>
 
+<!-- SERVICES -->
+<section class="services" id="services">
+  <div class="section-inner">
+    <div class="reveal">
+      <div class="section-label">What we do</div>
+      <h2 class="section-title">Driveway<br><em>Sealcoating.</em></h2>
+      <p class="section-body">We specialize in one thing and we do it right. No upsells, no gimmicks — just quality asphalt sealcoating serving York and Ogunquit, Maine.</p>
+    </div>
+    <div class="service-card reveal">
+      <div class="service-header">
+        <h2>Full Driveway Sealcoating</h2>
+        <p>Complete protection from the ground up</p>
+      </div>
+      <div class="service-body">
+        <div class="service-feature"><span class="sf-icon">🧹</span><h4>Surface prep & cleaning</h4><p>We blow out debris, clean oily areas, and make sure your surface is ready before any sealer touches it.</p></div>
+        <div class="service-feature"><span class="sf-icon">🔧</span><h4>Crack filling</h4><p>We fill cracks before sealing to prevent water from getting underneath and making things worse over time.</p></div>
+        <div class="service-feature" style="border-right:none; border-bottom:none;"><span class="sf-icon">🖌️</span><h4>Hand-edging</h4><p>Edges are done by hand for a clean, finished look along your grass, garden beds, and curbs.</p></div>
+      </div>
+      <div class="service-footer">
+        <div class="price-note">Free estimates<span>Most jobs $300–$600 depending on driveway size</span></div>
+        <a href="tel:+12072193609" class="btn-primary">Get Your Quote</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq-section" id="faq">
+  <div class="section-inner">
+    <div class="reveal" style="text-align:center; max-width: 760px; margin: 0 auto 48px;">
+      <div class="section-label">FAQ</div>
+      <h2 class="section-title">Common <em>questions.</em></h2>
+    </div>
+    <div class="faq-list">
+      <div class="faq-item"><input type="checkbox" id="f1"><label class="faq-q" for="f1">How long does sealcoating take?</label><div class="faq-a">Most residential driveways take 2–4 hours from start to finish — prep, edging, two coats, and cleanup. We'll give you a time estimate when we come out for your quote.</div></div>
+      <div class="faq-item"><input type="checkbox" id="f2"><label class="faq-q" for="f2">When can I drive on it after?</label><div class="faq-a">We recommend staying off it for 24–48 hours to let the sealer fully cure. We'll walk you through everything before we leave.</div></div>
+      <div class="faq-item"><input type="checkbox" id="f3"><label class="faq-q" for="f3">How often should I sealcoat?</label><div class="faq-a">Every 2–3 years is the sweet spot. Too often causes buildup problems; too rarely lets UV and water damage set in. We'll let you know when yours is due.</div></div>
+      <div class="faq-item"><input type="checkbox" id="f4"><label class="faq-q" for="f4">What if it rains?</label><div class="faq-a">We won't sealcoat if rain is forecast within 24 hours. We keep an eye on the weather and proactively reschedule if needed — your time matters to us.</div></div>
+      <div class="faq-item"><input type="checkbox" id="f5"><label class="faq-q" for="f5">Is crack filling included?</label><div class="faq-a">Yes — basic crack filling is part of our prep process. Larger cracks or significant damage may need extra work, and we'll always tell you upfront if that's the case.</div></div>
+      <div class="faq-item"><input type="checkbox" id="f6"><label class="faq-q" for="f6">How do I get a price?</label><div class="faq-a">Just call or text! We'll swing by, measure the driveway, and give you a solid number on the spot. No obligation, no pressure.</div></div>
+    </div>
+  </div>
+</section>
+
 <!-- CTA -->
 <section class="cta-section" id="contact">
   <div class="reveal">
@@ -672,11 +565,7 @@
     <div class="cta-phones">
       <a href="tel:+12072193609" class="phone-btn">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.62 3.38 2 2 0 0 1 3.6 1.18h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.77a16 16 0 0 0 6.29 6.29l.95-.96a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-        <div><span class="phone-label">Laird — Call or Text</span>(207) 219-3609</div>
-      </a>
-      <a href="tel:+19707569895" class="phone-btn">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.62 3.38 2 2 0 0 1 3.6 1.18h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.77a16 16 0 0 0 6.29 6.29l.95-.96a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-        <div><span class="phone-label">Jim — Call or Text</span>(970) 756-9895</div>
+        <div><span class="phone-label">Call or Text</span>(207) 219-3609</div>
       </a>
     </div>
   </div>
@@ -687,19 +576,13 @@
   <div class="footer-inner">
     <div class="footer-brand">
       <div style="display:inline-flex; align-items:center; gap:14px;">
-        <svg width="38" height="38" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <rect width="44" height="44" rx="6" fill="#FFD400"/>
-          <text x="7" y="33" font-family="'Barlow Condensed', sans-serif" font-weight="900" font-size="30" fill="#111111" letter-spacing="-1">BTB</text>
-          <rect x="7" y="36" width="8" height="3" rx="1.5" fill="#111111"/>
-          <rect x="18" y="36" width="8" height="3" rx="1.5" fill="#111111"/>
-          <rect x="29" y="36" width="8" height="3" rx="1.5" fill="#111111"/>
-        </svg>
+        <span class="btb-badge">BTB</span>
         <div class="logo-lockup">
           <span class="logo-top">Black Top Bros</span>
           <span class="logo-bottom">York &amp; Ogunquit, Maine</span>
         </div>
       </div>
-      <p>Three local athletes turned business owners. We bring hustle, honesty, and quality work to every driveway in York and Ogunquit.</p>
+      <p>Local guys, quality work, honest pricing. Serving York and Ogunquit, Maine.</p>
     </div>
     <div class="footer-col">
       <h4>Services</h4>
@@ -710,14 +593,13 @@
     <div class="footer-col">
       <h4>Contact</h4>
       <a href="tel:+12072193609">Laird: (207) 219-3609</a>
-      <a href="tel:+19707569895">Jim: (970) 756-9895</a>
       <p>York &amp; Ogunquit, ME</p>
       <p>Call or text anytime</p>
     </div>
   </div>
   <div class="footer-bottom">
-    <p>&copy; 2025 <strong>Black Top Bros</strong>. York, Maine. All rights reserved.</p>
-    <p>Proudly local. Fully insured.</p>
+    <p>&copy; 2026 <strong>Black Top Bros</strong>. York, Maine. All rights reserved.</p>
+    <p>Proudly local.</p>
   </div>
 </footer>
 
@@ -727,6 +609,7 @@
     entries.forEach(e => { if(e.isIntersecting){ e.target.classList.add('in'); observer.unobserve(e.target); } });
   }, { threshold: 0.12 });
   reveals.forEach(el => observer.observe(el));
+
   async function submitBooking() {
     const name = document.getElementById('b-name').value.trim();
     const phone = document.getElementById('b-phone').value.trim();
